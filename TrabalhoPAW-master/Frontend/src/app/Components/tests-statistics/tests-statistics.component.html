@@ -1,0 +1,41 @@
+
+<app-pie-chart class= "pie"></app-pie-chart>
+<mat-card class= "results">
+    <h2>Testes Por Dia</h2>
+
+    <mat-label><b>Data: </b>
+        <input format="long" type="date" name="data" [(ngModel)]="testData.data" placeholder="FirstDate" />
+    </mat-label>
+
+    <br><br>
+
+    <button mat-raised-button color="primary" (click)="testsData()">Pesquisar</button>
+
+    <br><br>
+
+    <p><b>Testes no dia {{testData.data}} :</b> {{result}}</p>
+
+    <div *ngIf="infected">
+        <p><b>Infetados:</b> {{infected}}</p>
+    </div>
+
+    <div *ngIf="nonInfected">
+        <p><b>Não infetados:</b> {{nonInfected}}</p>
+    </div>
+
+    <div *ngIf="total">
+        <p><b>Testes realizados:</b> {{total}}</p>
+    </div>
+
+    <form>
+        <mat-form-field class="example-full-width">
+            <mat-label>Nome Utente</mat-label>
+            <input matInput type="text" [(ngModel)]="id" name="id">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="getTotalUser()">Pesquisar</button>
+    </form>
+
+    <div *ngIf="totalUser">
+        <p><b>Testes realizados por {{id}} :</b> {{totalUser}}</p>
+    </div>
+</mat-card>

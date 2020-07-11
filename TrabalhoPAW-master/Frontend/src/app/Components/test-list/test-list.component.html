@@ -1,0 +1,26 @@
+<mat-accordion multi="true" *ngIf="tests.length > 0 ">
+    <mat-expansion-panel *ngFor="let test of tests">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{test._id}}
+            </mat-panel-title>
+
+            <mat-panel-description>
+                {{test.nomeUtente}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <p>Prioritario: {{test.prioridade}}</p>
+        <p *ngIf="test.dataPrimeiroTeste">Data Primeiro Teste: {{test.dataPrimeiroTeste}}</p>
+        <p *ngIf="test.primeiroResultado === true|| test.primeiroResultado === false">Resultado Primeiro Teste: {{test.primeiroResultado}}</p>
+        <p *ngIf="test.dataSegundoTeste">Data Segundo Teste: {{test.dataSegundoTeste}}</p>
+        <p *ngIf="test.segundoResultado === true|| test.segundoResultado === false">Resultado Segundo Teste: {{test.segundoResultado}}</p>
+        <b>Infetado: {{test.infetado}}</b>
+
+        <mat-action-row>
+            <button *ngIf="!test.dataPrimeiroTeste && user.role==='TECH'" mat-button color="warn" (click)="scheduleTest(test._id)">Agendar Teste</button>
+            <button *ngIf="test.dataPrimeiroTeste && (!test.realizadoPrimeiroTeste ||  !test.realizadoSegundoTeste) && user.role==='TECH'" mat-button color="primary" (click)="resultFirst(test._id)">Resultados</button>
+            <button *ngIf="test.realizadoPrimeiroTeste &&  test.realizadoSegundoTeste && user.role==='TECH'" mat-raised-button color="primary" (click)="openDoc(test._id)"> Download do Documento </button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>

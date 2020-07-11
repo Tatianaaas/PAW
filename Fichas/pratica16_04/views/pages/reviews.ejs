@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Review do livro</h1>
+   <h2>Review:</h2>
+    <%=review.description%>
+
+    <h1>Review By</h1>
+    <p><%=review.name%></p>
+    <p><%=review.mail%></p>
+<% if (review.leu=="on") { %>
+    <p>Leu o livro</p>
+<% }else { %>
+    <p>Nao leu o livro</p>
+    <% } %>
+</body>
+</html>

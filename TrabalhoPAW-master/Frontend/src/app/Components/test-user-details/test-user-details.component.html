@@ -1,0 +1,24 @@
+<mat-card *ngIf="test" class="tests">
+    <h2><span>Nome: </span>{{test.nomeUtente | uppercase}}</h2>
+
+    <h2>Detalhes</h2>
+
+    <div>
+        <span *ngIf="test.dataPrimeiroTeste"><b>Data do Primeiro Teste: </b></span>{{test.dataPrimeiroTeste}}
+        <br>
+
+        <span *ngIf="test.primeiroResultado === true|| test.primeiroResultado === false"><b>Resultado do Primeiro Teste: </b></span>{{test.primeiroResultado}}
+        <br>
+
+        <span *ngIf="test.dataSegundoTeste"><b>Data do Segundo Teste: </b></span>{{test.dataSegundoTeste}}
+        <br>
+
+        <span *ngIf="test.segundoResultado === true|| test.segundoResultado === false"><b>Resultado do Segundo Teste: </b></span>{{test.segundoResultado}}
+        <br>
+
+        <span *ngIf="test.infetado === true|| test.infetado === false"><b>Infetado: </b></span>{{test.infetado}}
+        <br><br>
+
+        <button *ngIf="test.segundoResultado === true|| test.segundoResultado === false" mat-raised-button color="primary" (click)="openDoc(test._id)"> Download do Documento </button>
+    </div>
+</mat-card>

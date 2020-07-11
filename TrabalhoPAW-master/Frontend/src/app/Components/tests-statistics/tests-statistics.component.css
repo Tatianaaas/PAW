@@ -1,0 +1,12 @@
+.results {
+  width: 30%;
+
+}
+
+.pie{
+  width: 35%;
+}
+.pie, .results{
+  display: inline-block;
+  margin: 100px;
+}

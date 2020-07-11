@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: blue;
+            color: white;
+        }
+        body{
+            background-color: antiquewhite;
+            text-align: center;
+        }
+     
+    </style>
+
+
+</head>
+<body>
+<h1>Review</h1>
+
+    <form  action="/review/all" method="post">
+        <p>Name:</p>
+        <input required type="text" name="name" id="name"/>
+        <p>Email:</p>
+        <input required type="email" name="mail" id="mail"/>
+        <p>Book:</p>
+        <input required type="text" name="book" id="book"/>
+        <br>
+        <input type="file" name="imagem" id="imag">
+        <p>Description:</p>
+        <input type="text" name="description" id="description"><br>
+        <input type="radio" name="read" id="read">Read</input><br>
+        <input type="radio" name="notread" id="notread">Not read</input><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

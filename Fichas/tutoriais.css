@@ -1,0 +1,49 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #C3D3D0;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color on hover */
+  li a:hover {
+    background-color: #255C61;
+    color: white;
+  }
+
+  header{
+      text-align: center;
+      color: beige;
+      padding: 20px;
+      background-color: #174255;
+  }
+
+  
+
+h3{
+    font-weight: bold;
+    color: #AA8B6F;
+}
+p{
+    font-weight: bold;
+    color: #174255;
+}
+
+
+  .conteudo{
+      margin-top: 0;
+    margin-left: 200px;
+  max-width: 600px;
+}
+
+.conteudo, .nav{
+    display: grid;
+}
